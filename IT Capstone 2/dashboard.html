@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | BPBMC</title>
+    <link rel="icon" href="Assets/BPBMC Logo.png" type="image"/>
+    <link rel = "stylesheet" href = "Style/style.css" type="text/css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="sidebar">
+        <ul class = "nav-list" onmousedown="return false;" onselectstart="return false;">
+            <li class="blk">
+                <a href="dashboard.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a>
+                        <i class='bx bx-id-card'></i>
+                        <span class="links_name">Patient Record</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="submenu">
+                    <li class="links_name">Patient Record</a></li>
+                    <li><a href="Patient Record/add_patient.html">Add Patient Record</a></li>
+                    <li><a href="Patient Record/list_patient.html">List of Patients</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a>
+                        <i class='bx bx-calendar-event'></i>
+                        <span class="links_name">Appointment</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="submenu">
+                    <li class= "links_name">Appointment</a></li>
+                    <li><a href="Appointment/add_appointment.html">Add Appointment</a></li>
+                    <li><a href="Appointment/calendar_appointment.html">Calendar of Appointment</a></li>
+                    <li><a href="Appointment/history_appointment.html">Appointment History</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a>
+                        <i class='bx bx-clinic'></i>
+                        <span class="links_name">Outpatient</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="submenu">
+                    <li class ="links_name">Outpatient</a></li>
+                    <li><a href="Outpatient/op_billing.html">Billing Process</a></li>
+                    <li><a href="Outpatient/op_result.html">Medical Results</a></li>
+                    <li><a href="Outpatient/op_diagnostic.html">Diagnostic Services</a></li>
+                    <li><a href="Outpatient/op_treatment.html">Medical Treatment</a></li>
+                    <li><a href="Outpatient/op_monitoring.html">Patient Monitoring</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a>
+                        <i class='bx bx-group'></i>
+                        <span class="links_name">Add/Edit Account</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="submenu">
+                    <li class ="links_name">Add/Edit Account</a></li>
+                    <li><a href="Add Edit Account/add_account.html">Add Acount</a></li>
+                    <li><a href="Add Edit Account/edit_account.html">Edit Account</a></li>
+                    <li><a href="Add Edit Account/list_account.html">List of Account</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="backup.html">
+                    <i class='bx bx-cloud-upload'></i>
+                    <span class="links_name">Backup and Restore</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Backup and Restore</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="activity_log.html">
+                    <i class='bx bx-history'></i>
+                    <span class="links_name">Activity Log</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Activity Log</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="transaction_log.html">
+                    <i class='bx bx-book-content'></i>
+                    <span class="links_name">Transaction Log</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Transaction Log</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Settings</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Settings</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-log-out-circle'></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <ul class = "submenu blank">
+                    <li><a class = "links_name">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script src = "Script/script.js"></script>
+    </div>
+    <div class="navbar">
+        <div class="logo-details">
+            <i class='bx bx-menu' ></i>
+            <a href="dashboard.html">
+                <img class = "Logo" src ="Assets/BPBMC Logo.png" alt="BPBPMC Logo" width="50px">
+                <div class="logo_name">BPBMC</div>
+            </a>
+            <section class = date-time>
+            <div class="display-date">
+                <span id="day">day</span>,
+                <span id="daynum">00</span>
+                <span id="month">month</span>
+                <span id="year">0000</span>
+            </div>
+            <div class="display-time"></div>
+            <script src = "Script/dateandtime.js"></script>
+            </section>
+            <div class="notif" onclick="toggleNotif()">
+                <i class='bx bx-bell'></i>
+            </div>
+            <div class="notif-box" id="box">
+                <h2>Notification<span>17</span></h2>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="notif-item">
+                    <img src="Assets/ID PIC.png" alt="img">
+                    <div class="notif-text">
+                        <h4>Oelch Balbares</h4>
+                        <p>@lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+            <script src="Script/notif.js"></script>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="Assets/ID PIC.png" alt="display">
+                </div>
+                <span class="text">Hi, <b>Mr. Balbares</b>!</span>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+        </div>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <span class="text">Dashboard</span>
+        </div>
+        <div class="grid-db">
+            <article class="widget1" style="border-left: 5px solid #3F1179;">
+                <i class='bx bx-bed'></i>
+                <span class="num">23</span>
+                <span class="art-text">Total Patients</span>
+            </article>
+            <article class="widget2" style="border-left: 5px solid rgb(95, 27, 184);">
+                <i class='bx bx-calendar'></i>
+                <span class="num">23</span>
+                <span class="art-text">Total Appoinments</span>
+            </article>
+            <article class="widget3" style="border-left: 5px solid rgb(71, 77, 183);">
+                <i class='bx bx-hard-hat'></i>
+                <span class="num">23</span>
+                <span class="art-text">Total Staffs</span>
+            </article>
+            <article class="widget4" style="border-left: 5px solid #3AA5D5;">
+                <i class='bx bx-first-aid'></i>
+                <span class="num">23</span>
+                <span class="art-text">Available Doctors</span>
+            </article>
+        </div>
+        <div class="appointment-list">
+            <div class="appointment-txt">Appointments</div>
+                <div class="theader">
+                    <span class = "theader1">Patient Details</span>
+                    <span class = "theader2">Date</span>
+                    <span class = "theader3">Doctor Details</span>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="patientcard1">
+                    <div class="patientdetails">
+                        <img src="Assets/patient-icon.png" alt="img">
+                        <div class="patienttxt">
+                            <span class ="patientname">Juan Dela Cruz</span>
+                            <span class ="contactno">+63 975580701</span>
+                        </div>
+                    </div>
+                    <div class="datedetails">
+                        <span class ="date">12 Sept 2023</span>
+                        <span class ="time">5:00 PM</span>
+                    </div>
+                    <div class="doctordetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="doctortxt">
+                            <span class ="doctorname">Dr. Joyce Ann Fabella</span>
+                            <span class ="specialization">Family Doctor</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+        </div>
+        <div class="doctorsavailable">
+            <div class="doctorsavtxt">
+                <span>Doctors Available</span>
+            </div>
+            <div class="doctorsavlist">
+                <div class="dacard">
+                    <div class="dadetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="datxt">
+                            <span>Dr. Joyce Ann Fabella</span>
+                            <span>Family Doctor</span>
+                        </div>
+                    <div class="dadetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="datxt">
+                            <span>Dr. Joyce Ann Fabella</span>
+                            <span>Family Doctor</span>
+                        </div>
+                    </div>
+                    <div class="dadetails">
+                        <img src="Assets/doctor-icon.jpg" alt="img">
+                        <div class="datxt">
+                            <span>Dr. Joyce Ann Fabella</span>
+                            <span>Family Doctor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <script src = "Script/sidebar.js"></script>
+    <footer>
+        <span>Blessed Paul Bernard Medical Clinic</span><br>
+        <span>bpbmc@gmail.com</span><br>
+        <span>© All Rights Reserved 2023</span>
+    </footer>
+</body>
+</html>
